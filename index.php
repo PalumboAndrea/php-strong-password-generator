@@ -1,4 +1,7 @@
-    <?php include_once __DIR__ . '/functions.php'
+    <?php
+    include_once __DIR__ . '/functions.php';
+    include_once __DIR__ . '/psw.php';
+    
     ?>
 
 <!DOCTYPE html>
@@ -16,8 +19,13 @@
             <input type="number" name="passwordLength" placeholder="Lunghezza password">
             <button type="submit">Invia</button>
         </form>
+        
+        <p>
+            <?php 
+                echo $_SESSION['password'];
+            ?>
+        </p>
 
-        <p> <?php echo generateRandomString($_GET['passwordLength']) ?> </p>
     </main>
 
 </body>
