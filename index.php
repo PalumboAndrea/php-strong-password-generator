@@ -22,23 +22,25 @@
 
     <main>
 
-        <h1>
+        <h1 class="mt-5">
             Strong Password Generator
         </h1>
-
         <h2>
             Genera una password sicura
         </h2>
 
         <div id="form-wrapper" class="container w-75 rounded pb-5 pt-2 px-4 my-4 d-flex flex-column align-items-center">
-
             <div class="w-50">
                 <h3 class="my-4 text-center">
-                    Inserisci le seguenti indicazioni:
+                    Inserisci le seguenti informazioni:
                 </h3>
                 <div>
                     <form action="./index.php" method="GET" class="d-flex flex-column">
-                        <input type="number" name="passwordLength" placeholder="Lunghezza password" class="mb-2">
+                        <input type="number" name="passwordLength" placeholder="Lunghezza password" class="mb-2 w-50">
+                        <div>
+                            <input type="checkbox" id="repeat" name="repeat" value="repeat">
+                            <label for="repeat"> Consenti ripetizioni di uno o più caratteri</label>
+                        </div>
                         <div>
                             <input type="checkbox" id="letter" name="letter" value="letter">
                             <label for="letter"> Lettere</label>
@@ -51,21 +53,19 @@
                             <input type="checkbox" id="symbol" name="symbol" value="symbol">
                             <label for="symbol"> Simboli</label>
                         </div>
-                        <button type="submit" class="my-2">Invia</button>
+                        <div>
+                            <button type="submit" class="my-2 w-25 btn btn-dark">Invia</button>
+                        </div>
+                        
                     </form>
                 </div>
-                
             </div>
-
         </div>
 
-        <div id="password-container" class="container rounded w-75">
+        <div id="password-container" class="container rounded w-75 d-flex align-items-center">
             <h3>
-                La password generata è:
+                La password generata è:  <span id="password" class="ms-2"> <?php echo $_SESSION['password']; ?> </span>
             </h3>
-            <h4>
-                <?php echo $_SESSION['password']; ?>
-            </h4>
         </div>
 
     </main>

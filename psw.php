@@ -1,11 +1,12 @@
     <?php 
     include_once __DIR__ . '/../php-strong-password-generator/functions.php';
     session_start();
-    $passwordLength = (isset($_GET['passwordLength']) ? ($_GET['passwordLength']) : 0);
-    $ifLetter = (isset($_GET['letter']) ? ($_GET['letter']) : 0);
-    $ifNumber = (isset($_GET['number']) ? ($_GET['number']) : 0);
-    $ifSymbol = (isset($_GET['symbol']) ? ($_GET['symbol']) : 0);
-    $_SESSION['password'] = generateRandomString($passwordLength, $ifLetter, $ifNumber, $ifSymbol);
+    $passwordLength = (isset($_GET['passwordLength']) ? ($_GET['passwordLength']) : false);
+    $ifLetter = (isset($_GET['letter']) ? ($_GET['letter']) : false);
+    $ifNumber = (isset($_GET['number']) ? ($_GET['number']) : false);
+    $ifSymbol = (isset($_GET['symbol']) ? ($_GET['symbol']) : false);
+    $ifRepeat = (isset($_GET['repeat']) ? ($_GET['repeat']) : false);
+    $_SESSION['password'] = generateRandomString($passwordLength, $ifLetter, $ifNumber, $ifSymbol, $ifRepeat);
     ?>
 
 
