@@ -1,8 +1,8 @@
-    <?php
-    include_once __DIR__ . '/functions.php';
-    include_once __DIR__ . '/psw.php';
-    
-    ?>
+<?php
+include_once __DIR__ . '/functions.php';
+include_once __DIR__ . '/psw.php';
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,22 +10,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
-
     <title>php-strong-password-generator</title>
+
 </head>
 <body>
 
     <main>
 
-        <h1 class="mt-5">
+        <h1 class="mt-5 text-center">
             Strong Password Generator
         </h1>
-        <h2>
+        <h2 class="text-center">
             Genera una password sicura
         </h2>
 
@@ -56,7 +55,6 @@
                         <div>
                             <button type="submit" class="my-2 w-25 btn btn-dark">Invia</button>
                         </div>
-                        
                     </form>
                 </div>
             </div>
