@@ -1,5 +1,13 @@
-    <?php function generateRandomString($passwordLength) {
-            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    <?php function generateRandomString($passwordLength, $ifLetter, $ifNumber, $ifSymbol) {
+            if ($ifLetter == 0 && $ifNumber == 0 && $ifSymbol == 0){
+                $ifLetter = 'letter';
+                $ifNumber = 'number';
+                $ifSymbol = 'symbol';
+            }
+            $letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $numbers = '0123456789';
+            $symbols = '|\!"$%&/()=?^[]+*@#,;.:-_<>';
+            $characters = ($ifLetter == 'letter' ? $letters : '') . ($ifNumber == 'number' ? $numbers : '') . ($ifSymbol == 'symbol' ? $symbols : '');
             $charactersLength = strlen($characters);
             $randomString = '';
             for ($i = 0; $i < $passwordLength; $i++) {
